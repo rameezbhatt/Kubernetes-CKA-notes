@@ -1,0 +1,39 @@
+# Pods
+
+A Pod is the smallest deployable unit in Kubernetes, representing a single instance of a running process in a cluster.
+Pods can contain one or more tightly coupled containers that share the same network namespace and storage volumes.
+
+
+## Running Pods
+
+To create and run a Pod:
+
+```bash
+kubectl run nginx --image=nginx
+```
+
+## Getting Pods
+
+To get the status of a Pod:
+
+```bash
+kubectl get pods
+```
+
+## Deleting Pods
+
+To delete a Pod:
+
+```bash
+kubectl delete pod nginx
+```
+
+## Describe Pods
+
+To describe a Pod:
+
+```bash
+kubectl describe pod nginx
+```
+
+
