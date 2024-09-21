@@ -37,4 +37,53 @@ kubectl get pods -l app=myapp
 ```
 kubectl get all -l environment=production
 ```
-These commands can simplify resource creation and YAML generation during the exam.
+
+8. Adding a taint to a Node:
+
+ ```bash
+kubectl taint nodes node1 key=value:NoSchedule
+```
+
+9. List taints on all nodes
+
+```bash
+kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
+```
+
+10. List tolerations on all pods
+
+```bash
+kubectl get pods -o custom-columns=NAME:.metadata.name,TOLERATIONS:.spec.tolerations
+```
+
+
+11. Remove a taint from a node
+
+```bash
+kubectl taint nodes node1 key:NoSchedule-
+```
+
+12. Labeling a Node:
+
+```bash
+kubectl label nodes node1 type=large
+```
+
+13. List labels on all nodes
+
+```bash
+kubectl get nodes --show-labels
+```
+
+14. List node selectors on all pods
+
+```bash
+kubectl get pods -o custom-columns=NAME:.metadata.name,NODE_SELECTOR:.spec.nodeSelector
+```
+
+15. Remove a label from a node
+
+```bash
+kubectl label nodes node1 type-
+```
+
